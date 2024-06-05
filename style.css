@@ -1,0 +1,124 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.theme-switcher {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--button-border);
+  cursor: pointer;
+}
+
+.theme-switcher:hover {
+  opacity: 0.8;
+}
+
+.icon-button {
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+  background-color: rgba(147, 112, 219, 0.3);
+}
+
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Theme 1 */
+:root {
+  --bg-color: #f0f8ff;
+  --text-color: #333;
+  --button-bg: #007bff;
+  --button-text: #fff;
+  --button-border: #0056b3;
+}
+
+/* Theme 2 */
+.theme-dark {
+  --bg-color: #333;
+  --text-color: #f0f8ff;
+  --button-bg: #ff5722;
+  --button-text: #fff;
+  --button-border: #e64a19;
+}
+
+/* Theme 3 */
+.theme-light {
+  --bg-color: #ffeb3b;
+  --text-color: #333;
+  --button-bg: #8bc34a;
+  --button-text: #333;
+  --button-border: #689f38;
+}
